@@ -32,7 +32,20 @@ def sort_temperature(mylist):
 
 def calc_median_temperature(mylist):
     median_value = statistics.median(mylist)
-    print(median_value)
+    print("Correct median: " + str(median_value))
+    return median_value
+
+def calc_median_temperature_two(mylist):
+    n = len(mylist)
+    m1 = (n - 1) // 2
+    m2 = n // 2
+    print("string length: " + str(n))
+    if n % 2 == 0:
+        median_value = (mylist[m1] + (mylist[m2])) / 2
+    else:
+        median_value = mylist[m2]
+    
+    print("The median value is " + str(median_value))
     return median_value
 
 if __name__ == "__main__":
@@ -42,3 +55,4 @@ if __name__ == "__main__":
     find_min_max(temps)
     sort_temperature(temps)
     calc_median_temperature(temps)
+    calc_median_temperature_two(temps)
